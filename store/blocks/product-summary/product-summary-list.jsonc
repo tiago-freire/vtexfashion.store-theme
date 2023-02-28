@@ -20,8 +20,8 @@
   },
   "product-price-savings#summaryPercentage": {
     "props": {
-      "message": "{savingsPercentage}",
-      "blockClass": "summaryPercentage"
+      "message": "{savingsPercentage} OFF",
+      "blockClass": "summary"
     }
   },
   "flex-layout.row#savingsSummaryListDesktop": {
@@ -31,7 +31,6 @@
       "blockClass": "savingsSummaryListDesktop"
     },
     "children": [
-      "product-price-savings#summaryPercentage",
       "product-price-savings#summary"
     ]
   },
@@ -91,8 +90,8 @@
     },
     "children": [
       "flex-layout.row#savingsSummaryListDesktop",
-      "flex-layout.col#priceSummaryListDesktop",
-      "flex-layout.row#buyButtonsSummaryListDesktop"
+      "flex-layout.col#priceSummaryListDesktop"/* ,
+      "flex-layout.row#buyButtonsSummaryListDesktop" */
     ]
   },
   "flex-layout.row#buyButtonsSummaryListDesktop": {

@@ -133,7 +133,8 @@
   },
   "flex-layout.row#fetchmore": {
     "props": {
-      "marginTop": 3
+      "marginTop": 6,
+      "marginBottom": 6
     },
     "children": ["search-fetch-more"]
   },

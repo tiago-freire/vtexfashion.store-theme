@@ -1,0 +1,20 @@
+.regionSelector_icon,
+.regionSelector_regionTile {
+  color: inherit;
+  font-weight: 600;
+}
+
+.regionSelector {
+  padding: 6px 20px 0;
+  border-right: #e3e6e8 solid 1px;
+  min-width: 260px;
+}
+
+.modal {
+  max-width: 440px;
+  width: 440px;
+}
+
+.input {
+  height: 30px;
+}

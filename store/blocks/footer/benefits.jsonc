@@ -1,0 +1,111 @@
+{
+    "flex-layout.row#benefits": {
+      "children": [
+        "flex-layout.row#benefit1",
+        "flex-layout.row#benefit2",
+        "flex-layout.row#benefit3",
+        "flex-layout.row#benefit4",
+        "flex-layout.row#benefit5"
+      ],
+      "props": {
+        "blockClass": "deals",
+        "colSizing": "auto"
+      }
+    },
+    "flex-layout.row#benefit1": {
+      "props": {
+        "colSizing": "auto",
+        "colGap": 4
+      },
+      "children": ["image#benefit1", "rich-text#benefit1"]
+    },
+    "image#benefit1": {
+      "props": {
+        "src": "data:image/svg+xml,%3Csvg width='32' height='32' fill='currentColor' stroke-width='16' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' fill='none'%3E%3C/rect%3E%3Cpath d='M40,114.66667V56a8,8,0,0,1,8-8H208a8,8,0,0,1,8,8v58.66667c0,84.01533-71.306,111.85016-85.5438,116.57058a7.54755,7.54755,0,0,1-4.9124,0C111.306,226.51683,40,198.682,40,114.66667Z' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3Cpolyline points='172 104 113.333 160 84 132' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round'%3E%3C/polyline%3E%3C/svg%3E%0A",
+        "maxHeight": "32px"
+      }
+    },
+    "rich-text#benefit1": {
+      "props": {
+        "text": "Trusted by Safecon",
+        "blockClass": ["deals"]
+      }
+    },
+    "flex-layout.row#benefit2": {
+      "props": {
+        "colSizing": "auto",
+        "colGap": 4
+      },
+      "children": ["image#benefit2", "rich-text#benefit2"]
+    },
+    "image#benefit2": {
+      "props": {
+        "src": "data:image/svg+xml,%3Csvg width='32' height='32' fill='currentColor' stroke-width='16' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' fill='none'%3E%3C/rect%3E%3Ccircle cx='127.99414' cy='96' r='80' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round'%3E%3C/circle%3E%3Ccircle cx='127.99414' cy='96' r='48' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round'%3E%3C/circle%3E%3Cpolyline points='176 159.995 176 240 127.993 216 80 240 80 160.002' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round'%3E%3C/polyline%3E%3C/svg%3E%0A",
+        "maxHeight": "32px"
+      }
+    },
+    "rich-text#benefit2": {
+      "props": {
+        "text": "Quality Products",
+        "blockClass": "deals"
+      }
+    },
+    "flex-layout.row#benefit3": {
+      "props": {
+        "colSizing": "auto",
+        "colGap": 4
+      },
+      "children": ["image#benefit3", "rich-text#benefit3"]
+    },
+    "image#benefit3": {
+      "props": {
+        "src": "data:image/svg+xml,%3Csvg width='32' height='32' fill='currentColor' stroke-width='16' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' fill='none'%3E%3C/rect%3E%3Cpath d='M54.46089,201.53911c-9.204-9.204-3.09935-28.52745-7.78412-39.85C41.82037,149.95168,24,140.50492,24,127.99963,24,115.4945,41.82047,106.048,46.67683,94.31079c4.68477-11.32253-1.41993-30.6459,7.78406-39.8499s28.52746-3.09935,39.85-7.78412C106.04832,41.82037,115.49508,24,128.00037,24c12.50513,0,21.95163,17.82047,33.68884,22.67683,11.32253,4.68477,30.6459-1.41993,39.8499,7.78406s3.09935,28.52746,7.78412,39.85C214.17963,106.04832,232,115.49508,232,128.00037c0,12.50513-17.82047,21.95163-22.67683,33.68884-4.68477,11.32253,1.41993,30.6459-7.78406,39.8499s-28.52745,3.09935-39.85,7.78412C149.95168,214.17963,140.50492,232,127.99963,232c-12.50513,0-21.95163-17.82047-33.68884-22.67683C82.98826,204.6384,63.66489,210.7431,54.46089,201.53911Z' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3Cpolyline points='172 104 113.333 160 84 132' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round'%3E%3C/polyline%3E%3C/svg%3E%0A",
+        "maxHeight": "32px"
+      }
+    },
+    "rich-text#benefit3": {
+      "props": {
+        "text": "3-year Guarantee",
+        "blockClass": "deals"
+      }
+    },
+    "flex-layout.row#benefit4": {
+      "props": {
+        "colSizing": "auto",
+        "colGap": 4
+      },
+      "children": ["image#benefit4", "rich-text#benefit4"]
+    },
+    "image#benefit4": {
+      "props": {
+        "src": "data:image/svg+xml,%3Csvg width='32' height='32' fill='currentColor' stroke-width='16' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' fill='none'%3E%3C/rect%3E%3Cpath d='M48,139.58816V208a8,8,0,0,0,8,8H200a8,8,0,0,0,8-8V139.58972' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3Cpath d='M54.03441,40H201.96559a8,8,0,0,1,7.69219,5.80223L224,96H32L46.34222,45.80223A8,8,0,0,1,54.03441,40Z' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3Cpath d='M96,96v16a32,32,0,0,1-64,0V96' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3Cpath d='M160,96v16a32,32,0,0,1-64,0V96' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3Cpath d='M224,96v16a32,32,0,0,1-64,0V96' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3C/svg%3E%0A",
+        "maxHeight": "32px"
+      }
+    },
+    "rich-text#benefit4": {
+      "props": {
+        "text": "Pickup Options",
+        "blockClass": "deals"
+      }
+    },
+    "flex-layout.row#benefit5": {
+      "props": {
+        "colSizing": "auto",
+        "colGap": 4
+      },
+      "children": ["image#benefit5", "rich-text#benefit5"]
+    },
+    "image#benefit5": {
+      "props": {
+        "src": "data:image/svg+xml,%3Csvg width='32' height='32' fill='currentColor' stroke-width='16' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' fill='none'%3E%3C/rect%3E%3Cpath d='M240,120H176V80h42.58374a8,8,0,0,1,7.42781,5.02887Z' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3Cline x1='16' y1='144' x2='176' y2='144' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round'%3E%3C/line%3E%3Ccircle cx='188' cy='192' r='24' fill='none' stroke='currentColor' stroke-miterlimit='10'%3E%3C/circle%3E%3Ccircle cx='68' cy='192' r='24' fill='none' stroke='currentColor' stroke-miterlimit='10'%3E%3C/circle%3E%3Cline x1='164' y1='192' x2='92' y2='192' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round'%3E%3C/line%3E%3Cpath d='M44,192H24a8,8,0,0,1-8-8V72a8,8,0,0,1,8-8H176V171.21508' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3Cpath d='M176,171.21508V120h64v64a8,8,0,0,1-8,8H212' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3C/svg%3E%0A",
+        "maxHeight": "32px"
+      }
+    },
+    "rich-text#benefit5": {
+      "props": {
+        "text": "Free Shipping",
+        "blockClass": "deals"
+      }
+    }
+  }
+  

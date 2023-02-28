@@ -1,6 +1,14 @@
+.flexRowContent {
+  align-items: center;
+}
+
 .flexRowContent--menu-link,
 .flexRowContent--main-header {
   padding: 0 0.5rem;
+}
+
+.flexRowContent--main-header {
+  background-color: #fff !important;
 }
 
 @media screen and (min-width: 40em) {
@@ -11,14 +19,13 @@
 }
 
 @media screen and (min-width: 80rem) {
-  .flexRowContent--menu-link,
   .flexRowContent--main-header {
-    padding: 0 0.25rem;
+    padding: 0 15em;
   }
 }
 
 .flexRowContent--menu-link {
-  background-color: #03044e;
+  background-color: #e3e6e8;
   color: #fff;
 }
 
@@ -33,7 +40,7 @@
 }
 
 .flexRowContent--menu-link :global(.vtex-menu-2-x-styledLink) {
-  color: #ffffff;
+  color: #171a1c;
   font-size: 14px;
 }
 
@@ -43,8 +50,18 @@
 }
 
 .flexRow--deals {
-  background-color: #0F3E99;
+  background-color: #f1f2f3;
   padding: 14px 0px;
+}
+
+.flexRowContent--deals {
+  max-width: 970px;
+  margin: 0 auto;
+}
+
+.flexRowContent--deals :local(>) .stretchChildrenWidth:not(:last-child) {
+  border-right: #e3e6e8 solid 1px;
+  padding-right: 25px;
 }
 
 .flexRow--deals .stretchChildrenWidth {
@@ -66,6 +83,21 @@
   align-items: flex-start;
 }
 
+.flexCol--product-right-col {
+  border: #e3e6e8 solid 1px;
+  padding: 20px;
+}
+
+.flexCol--product-right-col :global(.vtex-button) {
+  background-color: #171a1c;
+  border-color: #171a1c;
+}
+
+.flexCol--product-right-col :global(.vtex-button):hover {
+  background-color: #5d666f;
+  border-color: #5d666f;
+}
+
 .flexCol--orderByCol {
   align-items: flex-end;
 }
@@ -81,6 +113,17 @@
 .flexRow--quickviewMainRow {
   display: flex;
   max-height: 100%;
+}
+
+.flexRow--menu-row,
+.flexRow--payment-methods,
+.flexRow--credits {
+  background-color: #f1f2f3;
+}
+
+.flexRowContent--menu-row,
+.flexRowContent--credits {
+  border-top: #e3e6e8 solid 1px;
 }
 
 .flexColChild--quickviewDetails:first-child {

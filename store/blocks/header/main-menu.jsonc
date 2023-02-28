@@ -1,0 +1,83 @@
+{
+  "vtex.menu@2.x:menu#main-menu": {
+    "children": [
+      "region-selector",
+      "menu-item#1",
+      "menu-item#2",
+      "menu-item#3",
+      "menu-item#4",
+      "menu-item#5"
+    ]
+  },
+  "region-selector": {
+    "props": {
+    //   "centerContent": true,
+      "title": "Set your location",
+      "addZipCodeText": "",
+      "modalTitle": "Set your location",
+      "modalDescription": "Prices, offers and availability may vary according to your location.",
+      "helpFindCep": "I don't know my Postal Code",
+      "helpFindCepLink": "#",
+      "buttonText": "APPLY",
+      "placeholder": "Postal Code",
+      "addressNotFoundMessage": "Address not found.",
+      "locationUnavailableMessage": "Location unavailable.",
+      "genericErrorMessage": "An error occurred."
+    }
+  },
+  "menu-item#1": {
+    "props": {
+      "type": "custom",
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "#",
+        "text": "Item 1"
+      }
+    }
+  },
+  "menu-item#2": {
+    "props": {
+      "type": "custom",
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "#",
+        "text": "Item 2"
+      }
+    }
+  },
+  "menu-item#3": {
+    "props": {
+      "type": "custom",
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "#",
+        "text": "Item 3"
+      }
+    }
+  },
+  "menu-item#4": {
+    "props": {
+      "type": "custom",
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "#",
+        "text": "Item 4"
+      }
+    }
+  },
+  "menu-item#5": {
+    "props": {
+      "type": "custom",
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "#",
+        "text": "Item 5"
+      }
+    }
+  }
+}

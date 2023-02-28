@@ -8,10 +8,12 @@
       "__fold__",
       "rich-text#shelf-title",
       "flex-layout.row#shelf",
-      "info-card#home",
+      "rich-text#shelf-title2",
+      "flex-layout.row#shelf2",
+      // "info-card#home",
       "rich-text#question",
-      "rich-text#link",
-      "newsletter"
+      "rich-text#link"/* ,
+      "newsletter" */
     ]
   },
 
@@ -47,7 +49,13 @@
 
   "rich-text#shelf-title": {
     "props": {
-      "text": "## Summer",
+      "text": "## What's Trending for Him",
+      "blockClass": "shelfTitle"
+    }
+  },
+  "rich-text#shelf-title2": {
+    "props": {
+      "text": "## New Arrival's for Her",
       "blockClass": "shelfTitle"
     }
   },
@@ -64,10 +72,37 @@
   "slider-layout#demo-products": {
     "props": {
       "itemsPerPage": {
-        "desktop": 4,
+        "desktop": 5,
         "tablet": 3,
         "phone": 1
       },
+      "showNavigationArrows": "never",
+      "showPaginationDots": "never",
+      "infinite": true,
+      "fullWidth": false,
+      "blockClass": "shelf"
+    }
+  },
+
+  "flex-layout.row#shelf2": {
+    "children": ["list-context.product-list#demo2"]
+  },
+  "list-context.product-list#demo2": {
+    "blocks": ["product-summary.shelf"],
+    "children": ["slider-layout#demo-products2"],
+    "props": {
+      "orderBy": "OrderByPriceDESC"
+    }
+  },
+  "slider-layout#demo-products2": {
+    "props": {
+      "itemsPerPage": {
+        "desktop": 5,
+        "tablet": 3,
+        "phone": 1
+      },
+      "showNavigationArrows": "never",
+      "showPaginationDots": "never",
       "infinite": true,
       "fullWidth": false,
       "blockClass": "shelf"
@@ -90,14 +125,14 @@
 
   "rich-text#question": {
     "props": {
-      "text": "**This is an example store built using the VTEX platform.\nWant to know more?**",
+      "text": "**The sun has set out Summer Sale! Save up to 50% off. Don't miss out!**",
       "blockClass": "question"
     }
   },
 
   "rich-text#link": {
     "props": {
-      "text": "\n**Reach us at**\nwww.vtex.com.br",
+      "text": "**[Check it out now!](#)**",
       "blockClass": "link"
     }
   }
