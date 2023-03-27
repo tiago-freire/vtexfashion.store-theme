@@ -95,7 +95,7 @@
     "props": {
       "title": "Logo",
       "href": "/",
-      "url": "https://vtexfashion.vtex.app/_next/static/media/logo_vtexfashion.30a8c1e9.png",
+      "url": "https://vtexfashion.vteximg.com.br/arquivos/topspin-logo.png",
       "width": "180"
     }
   },
@@ -142,7 +142,7 @@
     "props": {
       "title": "Logo",
       "href": "/",
-      "url": "https://vtexfashion.vtex.app/_next/static/media/logo_vtexfashion.30a8c1e9.png",
+      "url": "https://vtexfashion.vteximg.com.br/arquivos/topspin-logo.png",
       "width": "180"
     }
   }
