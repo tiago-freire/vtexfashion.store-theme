@@ -19,16 +19,20 @@ function waitElement(selector, fn) {
 function updateNosto() {
   console.log('Getting Nosto Settings:', nostoSettings)
 
-  const { enableNosto, belowCartPlacementId, belowSummaryPlacementId } =
-    nostoSettings
+  const {
+    nostoAccountID,
+    enableNosto,
+    belowCartPlacementId,
+    belowSummaryPlacementId,
+  } = nostoSettings
 
-  if (enableNosto) {
+  if (nostoAccountID && enableNosto) {
     if (!$('#nostojs').length && !nostoEnabled) {
       $('head').append(`
             <script id="nostojs" type="text/javascript">
               (function(){var name="nostojs";window[name]=window[name]||function(cb){(window[name].q=window[name].q||[]).push(cb);};})();
             </script>
-            <script src="https://connect.nosto.com/include/cvc9wpgx" async></script>
+            <script src="https://connect.nosto.com/include/${nostoAccountID}" async></script>
           `)
       nostoEnabled = true
     }
