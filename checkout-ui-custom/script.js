@@ -1,9 +1,7 @@
 let nostoSettings = {}
 let nostoEnabled = false
 
-$.getJSON(
-  'https://tiago--vtexfashion.myvtex.com/_v/nosto-checkout/settings'
-).done(data => (nostoSettings = data))
+$.getJSON('/_v/nosto-checkout/settings').done(data => (nostoSettings = data))
 
 function waitElement(selector, fn) {
   if ($(selector).length) fn()
