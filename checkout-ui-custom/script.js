@@ -1,7 +1,4 @@
-let nostoSettings = {}
 let nostoEnabled = false
-
-$.getJSON('/_v/nosto-checkout/settings').done(data => (nostoSettings = data))
 
 function waitElement(selector, fn) {
   if ($(selector).length) fn()
@@ -15,75 +12,96 @@ function waitElement(selector, fn) {
 }
 
 function updateNosto() {
-  console.log('Getting Nosto Settings:', nostoSettings)
+  $.getJSON('/_v/nosto-checkout/settings').done(nostoSettings => {
+    console.log('Nosto Settings:', nostoSettings)
 
-  const {
-    nostoAccountID,
-    enableNosto,
-    belowCartPlacementId,
-    belowSummaryPlacementId,
-  } = nostoSettings
+    const {
+      nostoAccountID,
+      enableNosto,
+      belowCartPlacementId,
+      belowSummaryPlacementId,
+    } = nostoSettings
 
-  if (nostoAccountID && enableNosto) {
-    if (!$('#nostojs').length && !nostoEnabled) {
-      $('head').append(`
-            <script id="nostojs" type="text/javascript">
-              (function(){var name="nostojs";window[name]=window[name]||function(cb){(window[name].q=window[name].q||[]).push(cb);};})();
-            </script>
-            <script src="https://connect.nosto.com/include/${nostoAccountID}" async></script>
-          `)
-      nostoEnabled = true
+    if (nostoAccountID && enableNosto) {
+      if (!nostoEnabled) {
+        $('head').append(`
+                <script id="nostojs" type="text/javascript">
+                  (function(){var name="nostojs";window[name]=window[name]||function(cb){(window[name].q=window[name].q||[]).push(cb);};})();
+                </script>
+                <script src="https://connect.nosto.com/include/${nostoAccountID}" async></script>
+              `)
+        nostoEnabled = true
+      }
+
+      if (belowCartPlacementId && !$(`#${belowCartPlacementId}`).length) {
+        $('.cart-template-holder').append(
+          `<div class="nosto_element" id="${belowCartPlacementId}"></div>`
+        )
+      }
+
+      if (belowSummaryPlacementId && !$(`#${belowSummaryPlacementId}`).length) {
+        $('.custom-cart-template-wrap').append(
+          `<div class="nosto_element" id="${belowSummaryPlacementId}"></div>`
+        )
+      }
+
+      nostojs(api => {
+        api
+          .defaultSession()
+          .setResponseMode('HTML')
+          .viewFrontPage()
+          .setPlacements(api?.placements?.getPlacements())
+          .load()
+          .then(response => {
+            console.log('Updating placements:', response)
+            api.placements.injectCampaigns(response.recommendations)
+            Object.keys(response.recommendations).forEach(key => {
+              $(`#${key} .nosto-header`).attr(
+                'style',
+                'font-family: inherit !important'
+              )
+            })
+          })
+      })
+
+      waitElement('.nosto-header', () => {
+        $('.nosto-header').attr('style', 'font-family: inherit !important')
+      })
+
+      const clientProfileData = vtexjs?.checkout?.orderForm?.clientProfileData
+      const orderFormId = vtexjs?.checkout?.orderForm?.orderFormId
+      const nostoCustomer = {
+        customer_reference: orderFormId,
+        email: clientProfileData?.email,
+        first_name: clientProfileData?.firstName,
+        last_name: clientProfileData?.lastName,
+      }
+      const currencyCode =
+        vtexjs?.checkout?.orderForm?.storePreferencesData?.currencyCode
+      const nostoCartItems = vtexjs?.checkout?.orderForm?.items?.map(item => ({
+        name: item.name,
+        price_currency_code: currencyCode,
+        product_id: item.productId,
+        quantity: item.quantity,
+        sku_id: item.id,
+        unit_price: +item.sellingPrice / 100,
+      }))
+
+      nostojs?.(api => {
+        api
+          .defaultSession()
+          .setCart({ items: nostoCartItems })
+          .setCustomer(nostoCustomer)
+          .viewCart()
+          .update()
+          .then(data => {
+            console.log('Cart sent to Nosto:', nostoCartItems)
+            console.log('Customer sent to Nosto:', nostoCustomer)
+            console.log('Nosto updated data:', data)
+          })
+      })
     }
-
-    if (belowCartPlacementId && !$(`#${belowCartPlacementId}`).length) {
-      $('.cart-template-holder').append(
-        `<div class="nosto_element" id="${belowCartPlacementId}"></div>`
-      )
-    }
-
-    if (belowSummaryPlacementId && !$(`#${belowSummaryPlacementId}`).length) {
-      $('.custom-cart-template-wrap').append(
-        `<div class="nosto_element" id="${belowSummaryPlacementId}"></div>`
-      )
-    }
-
-    waitElement('.nosto-header', () => {
-      $('.nosto-header').attr('style', 'font-family: inherit !important')
-    })
-
-    const clientProfileData = vtexjs?.checkout?.orderForm?.clientProfileData
-    const orderFormId = vtexjs?.checkout?.orderForm?.orderFormId
-    const nostoCustomer = {
-      customer_reference: orderFormId,
-      email: clientProfileData?.email,
-      first_name: clientProfileData?.firstName,
-      last_name: clientProfileData?.lastName,
-    }
-    const currencyCode =
-      vtexjs?.checkout?.orderForm?.storePreferencesData?.currencyCode
-    const nostoCartItems = vtexjs?.checkout?.orderForm?.items?.map(item => ({
-      name: item.name,
-      price_currency_code: currencyCode,
-      product_id: item.productId,
-      quantity: item.quantity,
-      sku_id: item.id,
-      unit_price: +item.sellingPrice / 100,
-    }))
-
-    nostojs?.(api => {
-      api
-        .defaultSession()
-        .setCart({ items: nostoCartItems })
-        .setCustomer(nostoCustomer)
-        .viewCart()
-        .update()
-        .then(data => {
-          console.log('Cart sent to Nosto:', nostoCartItems)
-          console.log('Customer sent to Nosto:', nostoCustomer)
-          console.log('Nosto updated data:', data)
-        })
-    })
-  }
+  })
 }
 
 function updateDemoStoreWarning() {

@@ -145,6 +145,7 @@ body.v-custom-step-payment .arrow.after-shipping {
 
 .nosto-header {
   font-weight: 500 !important;
+  font-family: inherit !important;
 }
 
 .nosto-list {
