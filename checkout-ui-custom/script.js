@@ -25,7 +25,7 @@ function updateNosto() {
           JSON.stringify(nostoSettings)
         )
       })
-    }, 200)
+    }, 200 * (i + 1))
 
     if (nostoSettings) {
       clearInterval(getNostoSettingsTimeout)
